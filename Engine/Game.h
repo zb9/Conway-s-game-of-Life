@@ -23,6 +23,9 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "Graphics.h"
+#include "Board.h"
+#include "Location.h"
+#include "CellsBoard.h"
 
 class Game
 {
@@ -42,5 +45,8 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+	Location loc;
+	Board brd;
+	CellsBoard cell;
 	/********************************/
 };

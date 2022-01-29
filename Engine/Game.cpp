@@ -26,6 +26,10 @@ Game::Game( MainWindow& wnd )
 	wnd( wnd ),
 	gfx( wnd )
 {
+	for (int i = 0; i < Board::nCells; ++i)
+	{
+		cell.CellInit(i);
+	}
 }
 
 void Game::Go()
@@ -34,12 +38,14 @@ void Game::Go()
 	UpdateModel();
 	ComposeFrame();
 	gfx.EndFrame();
-}
+} 
 
 void Game::UpdateModel()
 {
+	cell.Update(wnd.kbd, wnd.mouse, brd, gfx);
 }
 
 void Game::ComposeFrame()
 {
+	//brd.DrawCell({ 0, 0 }, gfx);
 }
